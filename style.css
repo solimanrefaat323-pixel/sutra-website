@@ -1,0 +1,257 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  color: #ffffff;
+  direction: rtl;
+
+  /* الخلفية اللي بعتها – مانيكانز فساتين وبدل على خلفية داكنة درامية */
+  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.75)),
+              url('https://thumbs.dreamstime.com/z/mannequins-displaying-elegant-evening-dresses-dark-background-1456.jpg') center center / cover no-repeat fixed !important;
+
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* باقي الستايل عشان النصوص والعناصر تبقى واضحة */
+.container {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1;
+}
+
+.container.small {
+  max-width: 420px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.auth-box,
+.profile-box {
+  background: rgba(20, 20, 40, 0.92);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 40px 32px;
+  width: 100%;
+  max-width: 420px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+
+.logo {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #ffd700;
+  margin-bottom: 8px;
+  letter-spacing: 3px;
+}
+
+.subtitle {
+  font-size: 1.05rem;
+  opacity: 0.85;
+  margin-bottom: 30px;
+}
+
+.theme-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: white;
+  font-size: 1.4rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 100;
+  transition: all 0.3s;
+}
+
+.theme-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.social-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.social-btn {
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s;
+  color: white;
+}
+
+.google  { background: #DB4437; }
+.facebook { background: #1877F2; }
+.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+
+.social-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 25px 0;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.divider span {
+  padding: 0 24px;
+  font-size: 0.95rem;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.input-group {
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  background: rgba(40, 40, 70, 0.7);
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #ffd700;
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  margin: 12px 0 24px;
+  font-size: 0.9rem;
+}
+
+.options a {
+  color: #ffd700;
+  text-decoration: none;
+}
+
+.options a:hover {
+  text-decoration: underline;
+}
+
+.main-btn {
+  width: 100%;
+  padding: 15px;
+  background: #ffd700;
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.main-btn:hover {
+  background: #ffea00;
+  transform: translateY(-2px);
+}
+
+.suggest-btn {
+  background: #ffd700;
+  color: #000;
+}
+
+.switch-auth {
+  margin-top: 24px;
+  font-size: 0.95rem;
+}
+
+.switch-auth a {
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.switch-auth a:hover {
+  text-decoration: underline;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.result {
+  margin: 30px 0;
+  padding: 20px;
+  background: rgba(255, 215, 0, 0.08);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  font-size: 1.35rem;
+  font-weight: bold;
+}
+
+.logout {
+  margin-top: 30px;
+  background: rgba(255, 0, 0, 0.15);
+  color: white;
+  border: 1px solid rgba(255, 0, 0, 0.4);
+}
+
+.logout:hover {
+  background: rgba(255, 0, 0, 0.3);
+}
+
+@media (max-width: 480px) {
+  .social-buttons {
+    grid-template-columns: 1fr;
+  }
+  .auth-box,
+  .profile-box {
+    padding: 30px 20px;
+  }
+  .logo {
+    font-size: 2.8rem;
+  }
+}
